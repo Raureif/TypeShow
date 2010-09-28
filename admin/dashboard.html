@@ -1,0 +1,74 @@
+<div id="update-check-result">
+	Checking for updates...
+</div><!-- /update-check-result -->
+<script type="text/javascript">
+	//log(Admin.urlParams);
+//	if(Admin.urlParams.please_refresh) {
+//		$("#update-check-result").html("<div>You have successfully updated your TypeShow Installation, please refresh your Browser Cache now</div>");
+//	} else {
+		$.getJSON("http://update.typeshow.net/check/?v=0.3&callback=?", function(data) {
+			if(data.msg) $("#update-check-result").html('<div>'+ data.msg +'</div>');
+			if(data.latest) {
+				$("#update-check-result").append('<a href="update.php" class="btn">Update to latest version</a>').addClass("update-available");
+			}
+		});
+//	}
+</script>
+
+<h2>Managing your TypeShow</h2>
+
+<p><strong>Automatic Saving:</strong> Whatever you do in the admin area will be saved instantly, and you can see the result by hitting the <em>Preview</em> button in the upper right corner. However, your changes will not be visible to your website visitors until you klick <em>Publish.</em></p>
+
+
+<h2>Putting the widget on your website:</h2>
+<p>To integrate TypeShow into your website, please copy these code snippets in the appropriate places:</p>
+
+<p>1. Between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>:</p>
+
+<pre>
+<code id="codeA">
+</code>
+</pre>
+
+
+<p>2. In the <code>&lt;body&gt;</code>, at the place where TypeShow will live:</p>
+
+<pre>
+<code id="codeB">
+	
+</code>
+</pre>
+
+<h2>Find out more on <a href="http://typeshow.net/">typeshow.net</a>.</h2>
+<script type="text/javascript">
+	function getPath() {
+		var PATH = window.location.pathname.split('/');
+		for(i in PATH) if(PATH[i] == "") PATH.splice(i,1);
+		if(PATH[PATH.length-1] == "admin") PATH.pop();
+		return PATH.join('/')
+	}
+
+	var myPath = getPath();
+
+
+	var codeA = '&lt;link rel=&quot;stylesheet&quot; media=&quot;screen, projection&quot; href=&quot;/'+ myPath +'/css/typeshow.css&quot; type=&quot;text/css&quot; /&gt;\n'
+		+ '&lt;script src=&quot;/'+ myPath +'/js/jquery.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;\n'
+		+ '&lt;script src=&quot;/'+ myPath +'/js/jquery.typeshow.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;\n'
+		+ '&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;\n'
+		+ '$(document).ready(function() {\n'
+		+ '	$(&quot;#typeshow&quot;).typeshow({\n'
+		+ '		&quot;folder&quot; : &quot;/'+ myPath +'&quot;\n'
+		+ '	});\n'
+		+ '});\n'
+		+ '&lt;/script&gt;\n';
+
+	var codeB = '&lt;div id=&quot;typeshow&quot;&gt;&lt;/div&gt;';
+
+	$("#codeA").html(codeA);
+	$("#codeB").html(codeB);
+
+
+</script>
+
+
+

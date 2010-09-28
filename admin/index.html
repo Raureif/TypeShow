@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-language" content="en">
+		<meta name="robots" content="noindex, noarchive, nofollow">
+
+		<link rel="Shortcut Icon" type="image/ico" href="./favicon.png">
+
+		<title>TypeShow Admin</title>
+		<link rel="stylesheet" media="screen, projection" type="text/css" href="css/colorpicker.css">
+		<link rel="stylesheet" media="screen, projection" type="text/css" href="css/screen.css">
+		<link rel="stylesheet" media="screen, projection" href="../css/typeshow.css" type="text/css">
+		<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="css/ios.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.typeshow.js"></script>
+		<script type="text/javascript" src="js/jquery.colorpicker.js"></script>
+		<script type="text/javascript" src="js/template-fonts.js"></script>
+		<script type="text/javascript" src="js/template-themes.js"></script>
+		<script type="text/javascript" src="js/template-pangrams.js"></script>
+		<script type="text/javascript" src="js/template-settings.js"></script>
+		<script type="text/javascript" src="js/jquery.JSONeditor.js"></script>
+		<script type="text/javascript" src="js/typeshow-admin.js"></script>
+	</head>
+
+	<body>
+		<div id="top">
+			<div class="message">Welcome! Changes will be saved automatically.</div>
+			<ul>
+				<li><a href="#preview-wrapper" class="btn-preview"><span>Preview</span></a></li>
+				<li><a href="#publish" class="btn-submit"><span>Publish</span></a></li>
+			</ul>
+		</div><!-- /top -->
+
+		<div id="left">
+
+			<div class="logo">
+				<h1><span>TypeShow</span></h1>
+				<span class="logo-subline">for <a id="host" href="#">me</a></span>
+			</div><!-- /logo -->
+
+			<ul class="nav">
+				<li><a href="#dashboard">Dashboard</a></li>
+				<li><a href="#editor-fonts">Fonts</a></li>
+				<li><a href="#editor-themes">Themes</a></li>
+				<li><a href="#editor-pangrams">Pangrams</a></li>
+				<li><a href="#editor-settings">Settings</a></li>
+				<li><a href="#statistics">Statistics</a></li>
+				<li><a href="#changepassword">Password</a></li>
+			</ul>
+
+			<div class="footer">
+				<a href="http://typeshow.net">TypeShow</a> by <a href="http://raureif.net">Raureif</a>
+			</div>
+
+		</div><!-- /left -->
+
+		<div id="center"></div>
+
+		<div id="right">
+
+			<div id="dashboard"></div>
+
+			<div id="editor-fonts"></div>
+
+			<div id="editor-themes"></div>
+
+			<div id="editor-settings"></div>
+
+			<div id="editor-pangrams"></div>
+
+			<div id="statistics"></div>
+
+			<div id="changepassword"></div>
+
+		</div>
+
+		<div id="preview-wrapper"><div id="preview"><button id="btn-close-preview">Close</button><div id="typeshow"></div></div></div>
+
+		<div id="publish"></div>
+
+		<div id="precompile"></div>
+
+	</body>
+</html>

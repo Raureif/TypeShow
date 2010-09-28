@@ -1,0 +1,13 @@
+/* @override http://www.ts.dev/ts/css/ios.css */
+
+body, html {
+	height: auto !important;
+	-webkit-text-size-adjust: none; /* iOS fix */
+}
+
+#left,
+#center,
+#right {
+	height: auto;
+	overflow-y: scroll;
+}
