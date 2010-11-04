@@ -200,7 +200,7 @@
 		$.fn.JSONeditor.nodeCount++;
 		var image = null;
 		var ext = event.target.value.substring(event.target.value.lastIndexOf('.')+1);
-		if(ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "gif") {
+		if(ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "gif") {
 			image = folder +'/'+ event.target.value;
 		}
 		$('.rr_filedialog', instance).remove();
