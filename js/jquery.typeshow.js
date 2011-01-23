@@ -132,7 +132,7 @@
 			});
 
 			var txtbox = $(".ts_text", instance);
-			$(".ts_text", instance).css('width', (w - parseInt(txtbox.css('paddingLeft')) - parseInt(txtbox.css('paddingRight'))) - parseInt(txtbox.css('borderLeftWidth')) - parseInt(txtbox.css('borderRightWidth')) + "px");
+			$(".ts_text", instance).css('width', (w - parseInt(txtbox.css('paddingLeft')) - parseInt(txtbox.css('marginLeft')) - parseInt(txtbox.css('paddingRight'))) - parseInt(txtbox.css('marginRight')) - parseInt(txtbox.css('borderLeftWidth')) - parseInt(txtbox.css('borderRightWidth')) + "px");
 
 		}
 
