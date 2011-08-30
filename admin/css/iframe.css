@@ -72,6 +72,7 @@ body {
 	font-size: 15px;
 	overflow: hidden;
 	padding: 10px;
+	font: 15px/20px "Lucida Grande", Lucida, Verdana, sans-serif;
 	color: white;
 }
 
@@ -112,4 +113,7 @@ input[type=file] {
 	font-size: 15px;
 }
 
+.error {
+	color: #D00;
+}
 
