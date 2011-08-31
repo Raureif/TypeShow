@@ -235,14 +235,19 @@
 				'node' : $(event.target).data('node'),
 				'source' : $(event.target).data('source')
 			}, function (data) {
-				var el = document.getElementById(data.node);
-				$(el).removeAttr('readonly').val(data.value).attr('readonly', 'readonly');
-				$(".rr_filedialog",el.parentNode).remove();
-				$(el).prev().get(0).title = data.value;
-				var instance = my.getInstance(el);
-				my.updateJSONValue(instance.rrJson, data.path, data.value);
-				instance.rrOptions.onChange(el);
-				instance.rrOptions.onSaveFinished();
+				var $error = $(".rr_filedialog iframe").contents().find(".error");
+				if ($error.length > 0) {
+					$(".btn-clear-file,p").hide();
+				} else {
+					var el = document.getElementById(data.node);
+					$(el).removeAttr('readonly').val(data.value).attr('readonly', 'readonly');
+					$(".rr_filedialog",el.parentNode).remove();
+					$(el).prev().get(0).title = data.value;
+					var instance = my.getInstance(el);
+					my.updateJSONValue(instance.rrJson, data.path, data.value);
+					instance.rrOptions.onChange(el);
+					instance.rrOptions.onSaveFinished();
+				}
 			});
 		} else {
 			$(event.target).data('loadFired', true);

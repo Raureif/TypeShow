@@ -9,6 +9,7 @@
 
 
 		<?php
+		$error = '';
 		if (!empty($_FILES) && isset($_REQUEST['source'])) {
 			$filename = $_REQUEST['source'];
 			$filename = substr($filename, 0, (strpos($filename, '?')));
@@ -19,35 +20,50 @@
 						$accepted = explode(',', strtolower($_REQUEST['accept']));
 						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
 						if (!in_array(strtolower($ext), $accepted)) {
-							die('Filetype not accepted');
+							$error = 'Filetype not accepted.';
 						}
 					}
-					$path = explode('_', $item);
-					$itemname = $path[sizeof($path) - 1];
-					$obj = $fonts;
-					$i = 0;
-					foreach ($path AS $name) {
-						if ($name != $itemname) {
-							if (is_numeric($name)) {
-								$obj = $obj[$name];
+					if ($error == '') {
+						$path = explode('_', $item);
+						$itemname = $path[sizeof($path) - 1];
+						$obj = $fonts;
+						$i = 0;
+						foreach ($path AS $name) {
+							if ($name != $itemname) {
+								if (is_numeric($name)) {
+									$obj = $obj[$name];
+								} else {
+									$obj = $obj->$name;
+								}
 							} else {
-								$obj = $obj->$name;
+								//echo $itemname;
+								//echo var_dump($obj);
+								$obj->$itemname = $file['name'];
+								if (!is_dir('../' . $_REQUEST['folder'])) {
+									mkdir('../' . $_REQUEST['folder']);
+								}
+								if (!move_uploaded_file($file['tmp_name'], '../' . $_REQUEST['folder'] . '/' . $file['name'])) {
+									$error = 'Failed to save the file!';
+								}
 							}
-						} else {
-							//echo $itemname;
-							//echo var_dump($obj);
-							$obj->$itemname = $file['name'];
-							if (!is_dir('../' . $_REQUEST['folder'])) {
-								mkdir('../' . $_REQUEST['folder']);
-							}
-							move_uploaded_file($file['tmp_name'], '../' . $_REQUEST['folder'] . '/' . $file['name']);
-							//echo 'Done';
 						}
 					}
+				} else {
+					$error = 'Failed to upload the file!';
 				}
 			}
-			file_put_contents('../' . $filename, json_encode($fonts));
-			echo 'ok';
+			if ($error == '') {
+				file_put_contents('../' . $filename, json_encode($fonts));
+				echo 'ok';
+			}
+
+		} else if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+			$error = 'The file is too big, maximum allowed upload size is '.ini_get('post_max_size').'.';
+
+		}
+		
+		if ($error != '') {
+			echo '<div class="error">'.$error.'</div>';
 		} else {
 		?>
 
