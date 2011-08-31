@@ -43,8 +43,8 @@ Look for installation instructions and news at http://typeshow.net
   
   
   
-  Contributors:
-  -------------
+Contributors:
+-------------
   
-  Gavin Redshaw ([Jill Design Studio](http://jilldesignstudio.com))
+Gavin Redshaw ([Jill Design Studio](http://jilldesignstudio.com))
 
