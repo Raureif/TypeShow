@@ -22,7 +22,7 @@ Look for installation instructions and news at http://typeshow.net
 	       |___/  |_|
 
   TypeShow, A Font Rendering Interface for Type Foundry Websites
-  Copyright © 2008–10 Raureif GmbH, www.raureif.net | www.typeshow.net
+  Copyright © 2008–12 Raureif GmbH, www.raureif.net | www.typeshow.net
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
