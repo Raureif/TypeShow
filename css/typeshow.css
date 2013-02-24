@@ -1,21 +1,25 @@
-/* @override http://www.ts.dev/ts/css/typeshow.css */
+.ts_typeshow, .ts_typeshow * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 .ts_typeshow {
 	font: 13px Verdana, sans-serif;
-    width: 600px;
+	width: 100%;
 }
 
 .ts_typeshow img {
-	float: left;	
+	max-width: 100%;
+	height: auto;
 }
 
 .ts_typeshow .ts_controls {
 	padding: 12px 0 0 0;
 	float: left;
+	clear: both;
 	width: 100%; /* required for IE6 + IE7 */
 }
-
-
 
 .ts_typeshow input, .ts_typeshow select {
 	float: left;
@@ -28,12 +32,11 @@
 .ts_typeshow input[type=text] {
 	display: inline;
 	font-size: 14px;
-	width: 592px; /* width - border - padding */
+	width: 100%;
 	padding: 3px;
 	margin-bottom: 8px;
 	background-repeat: no-repeat;
 }
-
 
 .ts_typeshow input[type=text]:hover {
 	border: 1px solid #bbb;
@@ -43,18 +46,17 @@
 	border: 1px solid #aaa;
 }
 
-
 .ts_text.loading {
 	background: #eee url(../img/frontend-loading.gif) 99% center;
 }
 
-
 .ts_typeshow .ts_fonts {
+	clear: left;
 	float: left;
 }
 
-
 .ts_typeshow .ts_themes {
+	clear: right;
 	float: right;
 	padding: 0;
 }
@@ -65,18 +67,16 @@
 }
 
 .ts_typeshow .ts_themes label{
-	width:20px;
-	height:20px;
+	width: 20px;
+	height: 20px;
 	display: block !important;
-	
+
 	background: url(../img/frontend-themes.gif) no-repeat 0 2px;
-	
+
 	/*hide text: */
 	text-align: left;
-	text-indent: -5000px;
-	overflow: hidden; 
-	line-height:0;
-
+	text-indent: 100%;
+	overflow: hidden;
 }
 
 .ts_typeshow #ts_dropdown_fonts {

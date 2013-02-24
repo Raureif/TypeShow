@@ -122,19 +122,6 @@
 		}).focus(function (e) {
 			e.target.select();
 		});
-		if (TS.settings.dimensions) {
-			var w = TS.settings.dimensions.width;
-			var h = TS.settings.dimensions.height;
-			$(instance).css('width', w + "px");
-			$(".ts_image", instance).css({
-				'width' : w + "px",
-				'height' : h + "px"
-			});
-
-			var txtbox = $(".ts_text", instance);
-			$(".ts_text", instance).css('width', (w - parseInt(txtbox.css('paddingLeft')) - parseInt(txtbox.css('marginLeft')) - parseInt(txtbox.css('paddingRight'))) - parseInt(txtbox.css('marginRight')) - parseInt(txtbox.css('borderLeftWidth')) - parseInt(txtbox.css('borderRightWidth')) + "px");
-
-		}
 
 		$(".ts_image", instance).attr('alt', 'TypeShow font sample is loading...');
 		$.fn.typeshow.update(true);
