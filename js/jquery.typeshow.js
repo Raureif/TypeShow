@@ -295,7 +295,7 @@
 	$.fn.typeshow.timer = null;
 
 	// TypeShow HTML Template
-	$.fn.typeshow.template = '<img class="ts_image" alt="TypeShow requires JavaScript to be turned on in your browser." src="blanko">'
+	$.fn.typeshow.template = '<img class="ts_image" alt="TypeShow requires JavaScript to be turned on in your browser." src="#">'
 + '<form onsubmit="return false;" method="get" action="" class="ts_controls">'
 + '<label for="ts_text"><span>Type here</span></label>'
 + '<input name="ts_text" type="text" class="ts_text" size="97" maxlength="97" value="" tabindex="0" />'
